@@ -9,16 +9,16 @@ class Solution:
         res=[]
         q=deque([root])
         while q:
-                qlen = len(q)
-                lev=[]
-                for i in range(qlen):
-                    node = q.popleft()
-                    if node:
-                        lev.append(node.val)
-                    # if node.left:
-                        q.append(node.left)
-                    # if node.left:
-                        q.append(node.right)
-                if lev:
-                    res.append(lev)
+            qlen = len(q)
+            lev=[]
+            for i in range(qlen):
+                node = q.popleft()
+                if node:
+                    lev.append(node.val)
+                if node and node.left:
+                    q.append(node.left)
+                if node and node.right:
+                    q.append(node.right)
+            if lev:
+                res.append(lev)
         return res
