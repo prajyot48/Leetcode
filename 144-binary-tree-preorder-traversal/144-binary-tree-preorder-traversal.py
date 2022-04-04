@@ -14,8 +14,8 @@ class Solution:
         while stack:
             r = stack.pop()
             l.append(r.val)
-            if r and r.right:
+            if r.right:
                 stack.append(r.right)
-            if r and r.left:
+            if r.left:
                 stack.append(r.left)
         return l
