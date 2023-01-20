@@ -12,19 +12,17 @@ class Solution:
         for arr in adj:
             for i in arr:
                 indegree[i] = indegree[i]+1
-        # s = deque(i for i in range(V) if i not in indegree)
-        
         queue = []
         for i in range(V):
             if indegree[i] == 0:
                 queue.append(i)
         cnt = 0
-        top_order = []
+        # top_order = []
         while queue:
             # Extract front of queue (or perform dequeue)
             # and add it to topological order
             u = queue.pop(0)
-            top_order.append(u)
+            # top_order.append(u)
             # Iterate through all neighbouring nodes
             # of dequeued node u and decrease their in-degree
             # by 1
